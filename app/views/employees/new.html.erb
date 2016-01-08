@@ -1,0 +1,17 @@
+<div style="margin-bottom: 20px">
+  <%= link_to '<< back to employees', employees_path, class: 'back-link' %>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Add Employee</h3>
+  </div>
+  <div class="panel-body">
+    <%= form_for :employee, url: employees_path do |f| %>
+      <%= render partial: 'employee_form', locals: {f: f} %>
+  </div>
+  <div class="panel-footer">
+    <%= submit_tag 'Save', class: 'btn btn-default' %>
+  </div>
+  <% end %>
+</div>

@@ -1,0 +1,23 @@
+<table>
+  <tr>
+    <th>#</th>
+    <th>Name</th>
+    <th>Employees No</th>
+  </tr>
+  <% if @departments.size > 0 %>
+    <% count = 0 %>
+    <% @departments.each do |dept| %>
+    <tr>
+      <td><%= count += 1 %></td>
+      <td><%= dept.name %></td>
+      <td><%= if dept.employees then dept.employees.size else 0 end  %></td>
+    </tr>
+    <% end %>
+  <% else %>
+    <tr>
+      <td colspan="4">
+        No departments are found!
+      </td>
+    </tr>
+  <% end %>
+</table>

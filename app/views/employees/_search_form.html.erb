@@ -1,0 +1,53 @@
+<%= form_for :employee, url: search_employees_path do |f| %>
+    
+    <table class="table borderless">
+        <tr>
+          <td class="text_rtl width100">Name:</td>
+          <td>
+            <%= text_field_tag :name, params[:name], class: 'form-control' %>      
+          </td>
+        </tr>
+        <tr>
+          <td class="text_rtl width30">Department:</td>
+          <td>
+            <%= select_tag :department_id,
+                            options_from_collection_for_select( @departments, "id", "name", params[:department_id]),
+                            prompt: 'Select Department', class: 'form-control' %>
+          </td>
+        </tr>
+        <tr>
+          <td class="text_rtl width30">Salary:</td>
+          <td>
+              <%= text_field_tag :salary, params[:salary], class: 'form-control' %>
+          </td>
+        </tr>
+        <tr>
+          <td class="text_rtl width100">Gender:</td>
+          <td>
+            <label class="radio-inline">
+                <%= radio_button_tag :gender, 'Male', params[:gender] == "Male" ? true : false %> Male  
+            </label>
+            <label class="radio-inline">
+              <%= radio_button_tag :gender, 'Female', params[:gender] == "Female" ? true : false %> Female
+            </label>
+            <label class="radio-inline">
+              <%= radio_button_tag :gender, 'All', params[:gender] == "All" ? true : false %> All
+            </label>
+          </td>
+        </tr>
+        <tr>
+          <td class="text_rtl" width30>Skills:</td>
+          <td>
+            <% for skill in Skill.all %>
+                <label class="checkbox-inline">
+                    <%= check_box_tag('skills[]', skill.id, (params[:skills] || []).include?(skill.id.to_s)) %> <%= skill.name %>
+                </label>
+            <% end %>
+          </td>
+        </tr>
+    </table>
+    <div class="modal-footer">
+        <%= submit_tag 'Apply Filter', {class: 'btn btn-primary'} %>
+        <%= link_to 'Clear Filter', { action: 'index' }, { class: 'btn btn-default', 'data-dismiss' => 'model' } %>
+    </div>
+<% end %>

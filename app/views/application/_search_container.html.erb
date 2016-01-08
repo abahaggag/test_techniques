@@ -1,0 +1,14 @@
+<div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingOne">
+      <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" href="#collapseSearch" aria-expanded="false" aria-controls="collapseSearch" style="display: block;">
+          <b><%= title %></b>
+        </a>
+      </h4>
+    </div>
+    <div id="collapseSearch" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+      <div class="panel-body">
+        <%= render partial: search_form %>
+      </div>
+    </div>
+</div>

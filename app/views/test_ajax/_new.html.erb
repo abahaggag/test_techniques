@@ -1,0 +1,13 @@
+<div>
+  <div>
+    <%= form_for :department, url: {action: 'create'}, remote: 'true' do |f| %>
+      <table>
+        <tr>
+          <td>Name:</td>
+          <td><%= f.text_field :name %></td>
+        </tr>
+      </table>
+    <%= submit_tag 'Save' %>
+  </div>
+  <% end %>
+</div>

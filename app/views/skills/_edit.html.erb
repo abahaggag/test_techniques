@@ -1,0 +1,11 @@
+<div class="panel panel-default">
+  <div class="panel-body padding-top-15">
+    <%= form_for :skill, url: skill_path(@skill.id), method: 'patch', remote: 'true' do |f| %>
+      <%= render partial: 'form', locals: {f: f} %>
+  
+      <div class="panel-footer">
+        <%= submit_tag 'Save', class: 'btn btn-default' %>
+      </div>
+    <% end %>
+  </div>
+</div>

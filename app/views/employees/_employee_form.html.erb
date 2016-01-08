@@ -1,0 +1,41 @@
+<%= error_messages_for(@employee) %>
+
+<table class="table borderless">
+  <tr>
+    <td class="text_rtl width100">Name</td>
+    <td><%= f.text_field :name, class: 'form-control'  %></td>
+  </tr>
+  <tr>
+    <td class="text_rtl width100">Gender</td>
+    <td>
+      <label class="radio-inline">
+        <%= radio_button :employee, :gender, true, {checked: 'checked'} %> Male 
+      </label>
+      <label class="radio-inline">
+        <%= radio_button :employee, :gender, false %> Female 
+      </label>
+    </td>
+  </tr>
+  <tr>
+    <td class="text_rtl width100">Birth Date</td>
+    <td><%= f.date_select :birth_date, {start_year: 1920, end_year: Date.today.year - 1}, {class: 'form-control', style: 'display: inline; width: 33%'} %></td>
+  </tr>
+  <tr>
+    <td class="text_rtl width100">Department</td>
+    <td><%= f.select :department_id, @departments, {prompt: 'Select Department'}, {class: 'form-control'} %></td>
+  </tr>
+  <tr>
+    <td class="text_rtl width100">Salary</td>
+    <td><%= f.text_field :salary, {class: 'form-control'} %></td>
+  </tr>
+  <tr>
+    <td class="text_rtl width100">Skills</td>
+    <td>
+      <ul>
+        <% Skill.all.each do |skill| %>
+          <li><%= check_box_tag 'skills_list[]', skill.id, @employee.skills.map{|s| s.id}.include?(skill.id) %> <%= skill.name %></li>
+        <% end %>
+      </ul>
+    </td>
+  </tr>
+</table>

@@ -1,0 +1,14 @@
+<ul class="nav nav-tabs">
+  <li role="presentation"><%= link_to 'Employees', employees_path %></li>
+  <li role="presentation"><%= link_to 'Departments', departments_path %></li>
+  <li role="presentation" class="active"><%= link_to 'Skills', skills_path %></li>
+</ul>
+<div class="tab_body">
+  <div id="content">
+    <%= render 'index' %>
+  </div>
+  
+  <%= link_to 'Add Skill', new_skill_path, class: 'btn btn-default', data: {toggle: 'modal', target: '#myModel', remote: 'true'} %>
+</div>
+
+<%= render 'model' %>

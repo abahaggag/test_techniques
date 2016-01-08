@@ -1,0 +1,28 @@
+<table class="table table-bordered">
+  <tr>
+    <th>#</th>
+    <th>Name</th>
+    <th>Employees No</th>
+    <th></th>
+  </tr>
+  <% if @skills.size > 0 %>
+    <% count = 0 %>
+    <% @skills.each do |skill| %>
+    <tr>
+      <td><%= count += 1 %></td>
+      <td><%= skill.name %></td>
+      <td><%= if skill.employees then skill.employees.size else 0 end  %></td>
+      <td>
+        <%= link_to("Edit", edit_skill_path(skill.id), data: {toggle: 'modal', target: '#myModel', remote: 'true'}) %> -
+        <%= link_to("Delete", delete_skill_path(skill.id), data: {toggle: 'modal', target: '#myModel', remote: 'true'}) %>
+      </td>
+    </tr>
+    <% end %>
+  <% else %>
+    <tr>
+      <td colspan="4">
+        No skills are found!
+      </td>
+    </tr>
+  <% end %>
+</table>

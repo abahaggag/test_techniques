@@ -1,0 +1,88 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+body {
+    padding-top: 80px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+}
+
+.slide-image {
+    width: 100%;
+}
+
+.carousel-holder {
+    margin-bottom: 30px;
+}
+
+.carousel-control,
+.item {
+    border-radius: 4px;
+}
+
+.caption {
+    height: 130px;
+    overflow: hidden;
+}
+
+.caption h4 {
+    white-space: nowrap;
+}
+
+.thumbnail img {
+    width: 100%;
+}
+
+.ratings {
+    padding-right: 10px;
+    padding-left: 10px;
+    color: #d17581;
+}
+
+.thumbnail {
+    padding: 0;
+}
+
+.thumbnail .caption-full {
+    padding: 9px;
+    color: #333;
+}
+
+footer {
+    margin: 50px 0;
+}
+
+.left{
+    float: left;
+}
+
+table{
+    margin-bottom: 10px;
+}
+
+.borderless tbody tr td, .borderless tbody tr th, .borderless thead tr th{
+    border: none;
+}
+
+.text_rtl{
+    text-align: right;
+}
+
+.width100{
+    width: 100px;
+}
+
+.back-link { font-size: 0.8em; margin-bottom: 1em; }
+
+.tab_body{
+    padding:40px 20px 20px 20px;
+    
+    border:1px solid #ddd;
+    border-top: none;
+}
+
+.padding-top-15{
+     padding: 15px 0 0 0;
+}
+
+#loading-indicator {
+   display: none;
+ }

@@ -1,0 +1,12 @@
+$("#errors").html("");
+
+<% if @department.errors.any? %>
+    $("#errors").html("<%= j error_messages_for @department %>");
+<% else %>
+    <% flash.notice = 'Department has been updated successfully.' %>
+    $("#notice_area").html("<%= j render 'flash_notice' %>");
+    $("#content").html("<%= j render 'index' %>");
+    $("#myModel").modal("hide");
+<% end %>
+
+<% flash.notice = '' %>

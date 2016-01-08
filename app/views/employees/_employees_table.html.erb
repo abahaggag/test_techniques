@@ -1,0 +1,38 @@
+<div class="table-responsive">
+  <table class="table table-bordered">
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Gender</th>
+      <th>Salary</th>
+      <th>Birth Date</th>
+      <th>Skills</th>
+      <th></th>
+    </tr>
+    <% if employees.size > 0 %>
+      <% count = 0 %>
+      <% employees.each do |emp| %>
+      <tr>
+        <td><%= count += 1 %></td>
+        <td><%= emp.name %></td>
+        <td><%= emp.gender ? "Male" : "Female" %></td>
+        <td><%= number_to_currency(emp.salary) %></td>
+        <td><%= emp.birth_date %></td>
+        <td><%= emp.skills.size %></td>
+        <td>
+          <%= link_to("Show", {action: 'show', id: emp.id}) %> - 
+          <%= link_to("Edit", {action: 'edit', id: emp.id}, {"data-no-turbolink" => "true"}) %> -
+          <%= link_to("Delete", {action: 'delete', id: emp.id}, {"data-no-turbolink" => "true"}) %>
+        </td>
+      </tr>
+      <% end %>
+    <% else %>
+      <tr>
+        <td colspan="7">
+          No employees are found!
+        </td>
+      </tr>
+    <% end %>
+  </table>
+  <%= will_paginate employees, class: 'apple_pagination' %>
+</div>  

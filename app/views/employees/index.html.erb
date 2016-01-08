@@ -1,0 +1,16 @@
+<ul class="nav nav-tabs">
+  <li role="presentation" class="active"><%= link_to 'Employees', employees_path %></li>
+  <li role="presentation"><%= link_to 'Departments', departments_url %></li>
+  <li role="presentation"><%= link_to 'Skills', skills_url %></li>
+</ul>
+<div class="tab_body">
+  <!-- Search Container -->
+  <%= search_container_for 'Employee', 'search_form' %>
+  
+  <!-- Employees Table -->
+  <%= render partial: "employees_table", locals: {employees: @employees} %>
+  
+  <!-- Add Employee Button -->
+  <br>
+  <%= link_to 'Add Employee', new_employee_path, {class: 'btn btn-default', "data-no-turbolink" => "true"} %>
+</div>

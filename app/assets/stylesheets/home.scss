@@ -1,0 +1,21 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* About */
+#about_text p{
+    line-height: 30px;
+    font-size: 13pt
+}
+
+/* Contact */
+.header {
+        color: #36A0FF;
+        font-size: 27px;
+        padding: 10px;
+    }
+
+.bigicon {
+    font-size: 35px;
+    color: #36A0FF;
+}

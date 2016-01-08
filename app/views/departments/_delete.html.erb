@@ -1,0 +1,12 @@
+<div class="panel panel-default">
+  <div class="panel-body padding-top-15">
+    <%= form_for :employee, url: department_path(@department.id), method: 'delete', remote: 'true' do |f| %>
+      <%= error_messages_for @department %>
+      <p style="padding-left: 15px; padding-right: 15px">Are you sure to delete this department: <%= @department.name %> ?</p>
+  
+      <div class="panel-footer">
+        <%= submit_tag 'Delete', class: 'btn btn-default' %>
+      </div>
+    <% end %>
+  </div>
+</div>

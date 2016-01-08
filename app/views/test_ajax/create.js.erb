@@ -1,0 +1,7 @@
+$("errors").html("");
+
+<% if @department.errors.any? %>
+    $("#errors").html("<%= j error_messages_for @department %>");
+<% else %>
+    $("#content").html("<%= j render 'index' %>");
+<% end %>

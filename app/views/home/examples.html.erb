@@ -1,0 +1,64 @@
+<div class="page-header">
+  <h1>List of Examples</h1>
+</div>
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingOne">
+      <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          01. Employees Example
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+      <div class="panel-body">
+        <p>
+          This example has 3 models Employee, Department and Skill. Each employee belongs to one department and has many
+          skills. Each model has only the basic info that needed to implement some ideas.
+        </p>
+        <p>
+          <strong>Example Functionalities:</strong>
+          <ul>
+            <li>CRUD operations for employees, departments and skills tables.</li>
+            <li>Applying Parameterize Search.</li>
+            <li>Applying Pagination. (Using will_paginate gem)</li>
+            <li>Dealing with checkboxes, radiobuttons and select.</li>
+            <li>Using Bootstarp SCSS gem.</li>
+            <li>Using RESTful Routes.</li>
+            <li>Applying Ajax requests.</li>
+          </ul>
+        </p>
+        <br>
+        <%= link_to 'Go to example', { controller: 'employees' }, class: 'btn btn-primary' %>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingTwo">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          02 Example 02
+        </a>
+      </h4>
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+      <div class="panel-body">
+        Comming soon
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingThree">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          03 Example 03
+        </a>
+      </h4>
+    </div>
+    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+      <div class="panel-body">
+        Comming soon
+      </div>
+    </div>
+  </div>
+</div>
