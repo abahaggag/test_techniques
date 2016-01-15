@@ -1,4 +1,4 @@
-<%= form_for :employee, url: search_employees_path do |f| %>
+<%= form_for :employee, url: search_employees_path, remote: 'true' do |f| %>
     
     <table class="table borderless">
         <tr>
@@ -48,6 +48,6 @@
     </table>
     <div class="modal-footer">
         <%= submit_tag 'Apply Filter', {class: 'btn btn-primary'} %>
-        <%= link_to 'Clear Filter', { action: 'index' }, { class: 'btn btn-default', 'data-dismiss' => 'model' } %>
+        <%= link_to 'Clear Filter', employees_path, class: 'btn btn-default', data: {dismiss: 'model', remote: 'true'} %>
     </div>
 <% end %>

@@ -25,15 +25,8 @@ class EmployeesController < ApplicationController
       @employee.skills << Skill.find(skill_id)  
     end
     
-    if @employee.save
-        flash[:notice] = 'Employee added successfully.'
-        redirect_to action: 'index'
-    else
-        
-        @departments = Department.all.map { |dept| [dept.name, dept.id] }
-        render 'new'
-    end
-    
+    @employee.save
+    @employees = Employee.all.paginate(page: params[:page] || 1, per_page: params[:per_page] || 3)
   end
   
   def edit
@@ -48,14 +41,8 @@ class EmployeesController < ApplicationController
     checked_skills = add_and_return_checked_skills
     delete_missing_skills(skills, checked_skills)
     
-    if @employee.update_attributes(employee_params) 
-      flash[:notice] = 'Employee updated successfully.'
-      redirect_to action: 'index'
-    else
-      @departments = Department.all.map{ |dept| [dept.name, dept.id] }
-      render 'edit'
-    end
-    
+    @employee.update_attributes(employee_params)
+    @employees = Employee.all.paginate(page: params[:page] || 1, per_page: params[:per_page] || 3)
   end
   
   def delete
@@ -64,21 +51,13 @@ class EmployeesController < ApplicationController
   
   def destroy
     @employee = Employee.find_by(id: params[:id])
-    
-    if @employee.destroy
-        flash[:notice] = "Employee deleted successfully."
-        redirect_to action: 'index'
-    else
-        render 'delete'
-    end
-    
+    @employee.destroy
+    @employees = Employee.all.paginate(page: params[:page] || 1, per_page: params[:per_page] || 3)
   end
   
   def search
       @employees = apply_filter.paginate(page: params[:page] || 1, per_page: params[:per_page] || 100)
       @departments = Department.all
-      render 'index'
-      
   end
   
   private

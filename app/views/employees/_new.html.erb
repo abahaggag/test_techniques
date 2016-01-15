@@ -1,0 +1,11 @@
+<div class="panel panel-default">
+  <div class="panel-body padding-top-15">
+    <%= form_for :employee, url: employees_path, remote: 'true' do |f| %>
+      <%= render partial: 'employee_form', locals: {f: f} %>
+  
+      <div class="panel-footer">
+        <%= submit_tag 'Save', class: 'btn btn-default' %>
+      </div>
+    <% end %>
+  </div>
+</div>

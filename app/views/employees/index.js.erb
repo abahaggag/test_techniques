@@ -1,0 +1,2 @@
+$("#content").html("<%= j render partial: 'employees_table', locals: {employees: @employees} %>");
+$("#search").html("<%= j search_container_for 'Employee', 'search_form' %>");

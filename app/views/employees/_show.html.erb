@@ -1,0 +1,39 @@
+<div class="panel panel-default">
+  <div class="panel-body">
+    <table class="table borderless">
+      <tr>
+        <th class="text_rtl width100">Name:</th>
+        <td><%= @employee.name %></td>
+      </tr>
+      <tr>
+        <th class="text_rtl width100">Gender:</th>
+        <td><%= @employee.gender ? "Male" : "Female" %></td>
+      </tr>
+      <tr>
+        <th class="text_rtl width100">Birth Date:</th>
+        <td><%= @employee.birth_date %></td>
+      </tr>
+      <tr>
+        <th class="text_rtl width100">Department:</th>
+        <td><%= @employee.department.name if @employee.department %></td>
+      </tr>
+      <tr>
+        <th class="text_rtl width100">Salary:</th>
+        <td><%= number_to_currency @employee.salary %></td>
+      </tr>
+      <tr>
+        <th class="text_rtl width100">Skills:</th>
+        <td>
+          has <%= pluralize(@employee.skills.size, 'skill') %></label>
+          <% if @employee.skills.size > 0 %>
+          <ul>
+            <% @employee.skills.each do |skill| %>
+              <li><%= skill.name %></li>
+            <% end %>
+          </ul>
+          <% end %>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

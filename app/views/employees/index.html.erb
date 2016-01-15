@@ -5,12 +5,17 @@
 </ul>
 <div class="tab_body">
   <!-- Search Container -->
-  <%= search_container_for 'Employee', 'search_form' %>
+  <div id="search">
+    <%= search_container_for 'Employee', 'search_form' %>
+  </div>
   
   <!-- Employees Table -->
-  <%= render partial: "employees_table", locals: {employees: @employees} %>
+  <div id="content">
+    <%= render partial: "employees_table", locals: {employees: @employees} %>
+  </div>
   
   <!-- Add Employee Button -->
   <br>
-  <%= link_to 'Add Employee', new_employee_path, {class: 'btn btn-default', "data-no-turbolink" => "true"} %>
+  <%= link_to 'Add Employee', new_employee_path, class: 'btn btn-default', data: {toggle: 'modal', target: '#myModel', remote: 'true'} %>
 </div>
+<%= render 'model' %>

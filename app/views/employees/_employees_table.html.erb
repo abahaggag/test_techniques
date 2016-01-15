@@ -20,9 +20,9 @@
         <td><%= emp.birth_date %></td>
         <td><%= emp.skills.size %></td>
         <td>
-          <%= link_to("Show", {action: 'show', id: emp.id}) %> - 
-          <%= link_to("Edit", {action: 'edit', id: emp.id}, {"data-no-turbolink" => "true"}) %> -
-          <%= link_to("Delete", {action: 'delete', id: emp.id}, {"data-no-turbolink" => "true"}) %>
+          <%= link_to("Show", employee_path(emp.id), data: {toggle: 'modal', target: '#myModel', remote: 'true'}) %> - 
+          <%= link_to("Edit", edit_employee_path(emp.id), data: {toggle: 'modal', target: '#myModel', remote: 'true'}) %> -
+          <%= link_to("Delete", delete_employee_path(emp.id), data: {toggle: 'modal', target: '#myModel', remote: 'true'}) %>
         </td>
       </tr>
       <% end %>
@@ -34,5 +34,5 @@
       </tr>
     <% end %>
   </table>
-  <%= will_paginate employees, class: 'apple_pagination' %>
+  <%= js_will_paginate employees, class: 'apple_pagination', :params => { :my_excluded_param => nil } %>
 </div>  

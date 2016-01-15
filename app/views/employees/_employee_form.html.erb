@@ -1,4 +1,4 @@
-<%= error_messages_for(@employee) %>
+<div id="errors"></div>
 
 <table class="table borderless">
   <tr>
@@ -18,7 +18,7 @@
   </tr>
   <tr>
     <td class="text_rtl width100">Birth Date</td>
-    <td><%= f.date_select :birth_date, {start_year: 1920, end_year: Date.today.year - 1}, {class: 'form-control', style: 'display: inline; width: 33%'} %></td>
+    <td><%= f.date_select :birth_date, {start_year: 1920, end_year: Date.today.year - 1}, {class: 'form-control', style: 'display: inline; width: 32%'} %></td>
   </tr>
   <tr>
     <td class="text_rtl width100">Department</td>
